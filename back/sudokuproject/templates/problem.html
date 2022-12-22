@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'problem.css' %}">
+{% endblock header %}
+
+{% block content %}
+<div id="root"></div>
+<div id="hints" style="display: none;">{{ problem_data.problem }}</div>
+<script src="{% static 'problem.js' %}"></script>
+{% endblock content %}

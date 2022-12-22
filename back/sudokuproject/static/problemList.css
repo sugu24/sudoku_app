@@ -1,0 +1,44 @@
+.content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.example {
+    margin-top: 1rem;
+}
+
+.example > p {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.problem-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.problem-link {
+    margin: 0.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.problem-link:hover {
+    border-bottom: 1px solid rgb(247, 176, 46);
+}
+
+.select-problem-button {
+    color: black;
+    text-decoration: none;
+}
+
+.select-problem-button:hover {
+    color: rgb(247, 176, 46);
+}
+
+details {
+    border-bottom: 1px dashed black;
+}
+
+details[open] > p {
+    animation: fadeIn 0.5s ease;
+}

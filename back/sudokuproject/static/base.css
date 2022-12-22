@@ -1,0 +1,11 @@
+header {
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: beige;
+    padding: 1em;
+    margin-bottom: 1rem;
+}
+
+header > h2 {
+    margin: 0;
+}

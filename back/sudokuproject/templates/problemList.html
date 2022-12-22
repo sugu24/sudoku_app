@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'problemList.css' %}">
+{% endblock header %}
+
+{% block content %}
+<div class="content">
+    <details>
+        <summary>このサイトについて</summary>
+        <div>
+            このサイトは大学院で「ヒント数17*の数独パズルを効率よく生成する」について研究しているSuguが運用しています。<br>
+            そして、生成したヒント数17の数独パズルを公開するために、このサイトを作成しました。<br>
+            もしこのサイトで不具合や要望、コメント等があれば<a href="https://twitter.com/AtcoderSugu">twitter</a>でDMをしてくれたらうれしいです。<br>
+            一旦、7問のみ公開してみます。<br><br>
+            <p style="font-size: 15px; margin-bottom: 0;">*：数独の最小ヒント数は17であるため</p>
+        </div>
+    </details>
+    <div class="example">
+        <p>
+            例）ID. 公開日 （正解数/アクセス数）<br>
+            正解数とアクセス数のカウント機能は未実装
+        </p>
+    </div>
+    <form action="" method="POST">{% csrf_token %}
+        <div class="problem-list">
+            {% for problem in problem_list %}
+            <div class="problem-link">
+                <a href="{% url 'problem' problem.pk %}" class="select-problem-button">{{ problem.pk }}. {{ problem.post_data }}({{ problem.respondent }}/{{ problem.times }})</a>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+{% endblock content %}
